@@ -1,0 +1,137 @@
+<%= form_with(model: character, local: true) do |form| %>
+  <% if character.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(character.errors.count, "error") %> prohibited this character from being saved:</h2>
+
+      <ul>
+      <% character.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :PageNo %>
+    <%= form.number_field :PageNo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Type %>
+    <%= form.text_field :Type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :replacename %>
+    <%= form.text_field :replacename %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_name %>
+    <%= form.text_field :image_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :firstScore %>
+    <%= form.number_field :firstScore %>
+  </div>
+
+  <div class="field">
+    <%= form.label :upScore %>
+    <%= form.number_field :upScore %>
+  </div>
+
+  <div class="field">
+    <%= form.label :maxScore %>
+    <%= form.number_field :maxScore %>
+  </div>
+
+  <div class="field">
+    <%= form.label :SL1 %>
+    <%= form.number_field :SL1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :SL2 %>
+    <%= form.number_field :SL2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :SL3 %>
+    <%= form.number_field :SL3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :SL4 %>
+    <%= form.number_field :SL4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :SL5 %>
+    <%= form.number_field :SL5 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :SL6 %>
+    <%= form.number_field :SL6 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :SLFull %>
+    <%= form.number_field :SLFull %>
+  </div>
+
+  <div class="field">
+    <%= form.label :skillDetail %>
+    <%= form.text_field :skillDetail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mustNumChangeFlg %>
+    <%= form.check_box :mustNumChangeFlg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :musNum1 %>
+    <%= form.number_field :musNum1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mustNum2 %>
+    <%= form.number_field :mustNum2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mustNum3 %>
+    <%= form.number_field :mustNum3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mustNum4 %>
+    <%= form.number_field :mustNum4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mustNum5 %>
+    <%= form.number_field :mustNum5 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mustNum6 %>
+    <%= form.number_field :mustNum6 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :up_date %>
+    <%= form.text_field :up_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

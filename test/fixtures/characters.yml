@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  PageNo: 1
+  Type: MyString
+  name: MyString
+  replacename: MyString
+  image_name: MyString
+  firstScore: 1
+  upScore: 1
+  maxScore: 1
+  SL1: 1
+  SL2: 1
+  SL3: 1
+  SL4: 1
+  SL5: 1
+  SL6: 1
+  SLFull: 1
+  skillDetail: MyString
+  mustNumChangeFlg: false
+  musNum1: 1
+  mustNum2: 1
+  mustNum3: 1
+  mustNum4: 1
+  mustNum5: 1
+  mustNum6: 1
+  up_date: MyString
+
+two:
+  PageNo: 1
+  Type: MyString
+  name: MyString
+  replacename: MyString
+  image_name: MyString
+  firstScore: 1
+  upScore: 1
+  maxScore: 1
+  SL1: 1
+  SL2: 1
+  SL3: 1
+  SL4: 1
+  SL5: 1
+  SL6: 1
+  SLFull: 1
+  skillDetail: MyString
+  mustNumChangeFlg: false
+  musNum1: 1
+  mustNum2: 1
+  mustNum3: 1
+  mustNum4: 1
+  mustNum5: 1
+  mustNum6: 1
+  up_date: MyString
