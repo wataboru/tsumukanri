@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h5><a href="/characters">to Characters</a></h5>
+
+<h1>Features</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>row</th>
+      <th>No</th>
+      <th>Type</th>
+      <th>Content</th>
+      <th>Contentsortno</th>
+      <th>Up date</th>
+      <th>Deleteflg</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @features.each do |feature| %>
+      <tr>
+        <td><%= feature.id %></td>
+        <td><%= feature.no %></td>
+        <td><%= feature.featureType %></td>
+        <td><%= feature.content %></td>
+        <td><%= feature.contentSortNo %></td>
+        <td><%= feature.up_date %></td>
+        <td><%= feature.deleteFlg %></td>
+        <td><%= link_to 'Show', feature %></td>
+        <td><%= link_to 'Edit', edit_feature_path(feature) %></td>
+        <td><%= link_to 'Destroy', feature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Feature', new_feature_path %>
