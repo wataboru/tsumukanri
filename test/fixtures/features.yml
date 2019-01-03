@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  'no': 1
+  type: 
+  content: MyString
+  contentSortNo: 1
+  up_date: MyString
+  deleteFlg: false
+
+two:
+  'no': 1
+  type: 
+  content: MyString
+  contentSortNo: 1
+  up_date: MyString
+  deleteFlg: false
