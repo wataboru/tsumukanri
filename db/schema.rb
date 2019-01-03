@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_31_024549) do
+ActiveRecord::Schema.define(version: 2019_01_03_044437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "characters", force: :cascade do |t|
     t.integer "PageNo"
-    t.string "Type"
+    t.string "characterType"
     t.string "name"
-    t.string "replacename"
+    t.string "replaceName"
     t.string "image_name"
     t.integer "firstScore"
     t.integer "upScore"
@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 2018_12_31_024549) do
     t.integer "SL5"
     t.integer "SL6"
     t.integer "SLFull"
-    t.string "skillDetail"
+    t.text "skillDetail"
     t.boolean "mustNumChangeFlg"
-    t.integer "musNum1"
+    t.integer "mustNum1"
     t.integer "mustNum2"
     t.integer "mustNum3"
     t.integer "mustNum4"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2018_12_31_024549) do
 
   create_table "features", force: :cascade do |t|
     t.integer "no"
-    t.string "type"
+    t.string "featureType"
     t.string "content"
     t.integer "contentSortNo"
     t.string "up_date"
