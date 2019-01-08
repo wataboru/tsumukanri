@@ -1,24 +1,11 @@
-# README
+Tsumukanri-server
+====
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
+- GET the data stored in the DB through the API.
+- Data can be edited freely from the web screen.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Feature
+- Added CSV import to data editing method.
+- Introduction of design template.
+- GET data of DB narrowed down by condition from API
