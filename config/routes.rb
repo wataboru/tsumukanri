@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   # welcome page
   root 'characters#index'
+  # CSV import
+  get "/CSVImport/", :to => "csv_import#index"
+  post "/CSVImport/importCharacter", :to => "csv_import#importCharacter"
 
   # for API
   namespace :api do
