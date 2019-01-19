@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2019_01_03_044437) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "characters", force: :cascade do |t|
+  create_table "characters", id: :integer, default: nil, force: :cascade do |t|
     t.integer "PageNo"
     t.string "characterType"
     t.string "name"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2019_01_03_044437) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "features", force: :cascade do |t|
+  create_table "features", id: :integer, default: nil, force: :cascade do |t|
     t.integer "no"
     t.string "featureType"
     t.string "content"

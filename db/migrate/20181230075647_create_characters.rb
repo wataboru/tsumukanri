@@ -1,6 +1,7 @@
 class CreateCharacters < ActiveRecord::Migration[5.2]
   def change
-    create_table :characters do |t|
+    create_table :characters, id: false do |t|
+     t.column :id, 'int PRIMARY KEY' 
       t.integer :PageNo
       t.string :Type
       t.string :name
