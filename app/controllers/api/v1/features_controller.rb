@@ -15,5 +15,9 @@ class Api::V1::FeaturesController < ApplicationController
     render json: @features
   end
 
+  def getMaxUpdate
+    @maxUpdateOfFeature = Feature.maximum('up_date')
+    render json: @maxUpdateOfFeature
+  end
 
 end

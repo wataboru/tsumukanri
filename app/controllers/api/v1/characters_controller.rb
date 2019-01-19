@@ -33,4 +33,9 @@ class Api::V1::CharactersController < ApplicationController
     render json: @characters
   end
 
+  def getMaxUpdate
+    @maxUpdateOfCharacter = Character.maximum('up_date')
+    render json: @maxUpdateOfCharacter
+  end
+
 end
