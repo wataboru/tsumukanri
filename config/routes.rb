@@ -8,15 +8,18 @@ Rails.application.routes.draw do
   # CSV import
   get "/CSVImport/", :to => "csv_import#index"
   post "/CSVImport/importCharacter", :to => "csv_import#importCharacter"
+  post "/CSVImport/importFeature", :to => "csv_import#importFeature"
 
   # for API
   namespace :api do
     namespace :v1 do
       namespace :features do
         get "/get" , :action => "get"
+        get "/getMaxUpdate" , :action => "getMaxUpdate"
       end
       namespace :characters do
         get "/get" , :action => "get"
+        get "/getMaxUpdate" , :action => "getMaxUpdate"
       end
     end
   end

@@ -9,7 +9,7 @@
 <h3 style="margin-bottom: 2px;" >Characters</h3>
 <div>
   <%= form_tag({controller: "csv_import", action: "importCharacter", method: "POST"}, {multipart: true}) do %>
-    <%= file_field_tag :file %>
+    <%= file_field_tag :characters_file %>
     </br>
     <%= submit_tag "CSVインポート" %>
   <% end %>
@@ -18,7 +18,7 @@
 <h3 style="margin-bottom: 2px;" >Features</h3>
 <div>
   <%= form_tag({controller: "csv_import", action: "importFeature", method: "POST"}, {multipart: true}) do %>
-    <%= file_field_tag :file %>
+    <%= file_field_tag :features_file %>
     </br>
     <%= submit_tag "CSVインポート" %>
   <% end %>
