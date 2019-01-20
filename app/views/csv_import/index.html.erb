@@ -17,7 +17,7 @@
 
 <h3 style="margin-bottom: 2px;" >Features</h3>
 <div>
-  <%= form_tag({controller: "csv_import", action: "importCharacter", method: "POST"}, {multipart: true}) do %>
+  <%= form_tag({controller: "csv_import", action: "importFeature", method: "POST"}, {multipart: true}) do %>
     <%= file_field_tag :file %>
     </br>
     <%= submit_tag "CSVインポート" %>
