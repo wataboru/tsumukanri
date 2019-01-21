@@ -56,7 +56,9 @@ class CsvImportController < ApplicationController
         }
       )
       end
-      # importメソッドでバルクインサートできる
+      # 事前に全てTRUNCATE
+      truncate(Character, characters)
+      # importメソッドでバルクインサート
       ::Character.import(characters)
       # 何レコード登録できたかを返す
       ::Character.count - current_character_count
@@ -80,10 +82,16 @@ class CsvImportController < ApplicationController
         } 
       )
       end
-      # importメソッドでバルクインサートできる
+      # 事前に全てTRUNCATE
+      truncate(Feature, features)
+      # importメソッドでバルクインサート
       ::Feature.import(features)
       # 何レコード登録できたかを返す
       ::Feature.count - current_feature_count
+  end
+
+  def truncate(connection, tableName)
+    ::#{connection}.execute("TRUNCATE TABLE #{tableName};")
   end
 
 end
