@@ -1,5 +1,3 @@
-require 'time'
-
 class Api::V1::CharactersController < ApplicationController
   def get
     @characters = Character.all
