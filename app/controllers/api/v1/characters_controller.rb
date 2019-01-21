@@ -78,8 +78,8 @@ class Api::V1::CharactersController < ApplicationController
   private
 
     # 日付変換(YYYYMMDD ⇒ Date)
-    def fromYYYYMMDDtoDate(YYYYMMDD)
-      update = Time.parse("#{YYYYMMDD})
+    def fromYYYYMMDDtoDate(yyyymmdd)
+      update = Time.parse("#{yyyymmdd}")
     end
 
 
