@@ -20,6 +20,8 @@ class CsvImportController < ApplicationController
   private
 
   def import_characters
+    # 事前に全てTRUNCATE
+    ActiveRecord::Base.connection.execute("TRUNCATE TABLE characters;")
     # 登録処理前のレコード数
     current_character_count = ::Character.count
     characters = []
@@ -56,8 +58,6 @@ class CsvImportController < ApplicationController
         }
       )
     end
-    # 事前に全てTRUNCATE
-    ActiveRecord::Base.connection.execute("TRUNCATE TABLE characters;")
     # importメソッドでバルクインサート
     ::Character.import(characters)
     # 何レコード登録できたかを返す
@@ -65,6 +65,8 @@ class CsvImportController < ApplicationController
   end
 
   def import_Features
+    # 事前に全てTRUNCATE
+    ActiveRecord::Base.connection.execute("TRUNCATE TABLE features;")
     # 登録処理前のレコード数  
     current_feature_count = ::Feature.count
     features = []
