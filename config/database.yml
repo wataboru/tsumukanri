@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: tsumukanri
-  username: tsumukanri
-  password: <%= ENV['TSUMUKANRI_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
