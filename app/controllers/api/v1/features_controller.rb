@@ -1,6 +1,10 @@
 class Api::V1::FeaturesController < ApplicationController
   def get
-    @features = Feature.all
+    if !params[:fromUpdate].blank? then
+      @features = Feature.where("to_date(up_date, 'YYYYMMDD') >= to_date(?, 'YYYYMMDD')", params[:fromUpdate])
+    else
+      @features = Feature.all
+    end
     @features = @features.map do | feature |
       {
         row: feature.id,
