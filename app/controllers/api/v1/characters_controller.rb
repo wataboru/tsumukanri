@@ -34,7 +34,7 @@ class Api::V1::CharactersController < ApplicationController
   end
 
   def getWhereUpdate
-    @characters = ActiveRecord::Base.connection.execute("SELECT * FROM characters WHERE to_date(up_date, 'YYYYMMDD') >= to_date('#{param[:fromUpdate]}', 'YYYYMMDD')")
+    @characters = ActiveRecord::Base.connection.execute("SELECT * FROM characters WHERE to_date(up_date, 'YYYYMMDD') >= to_date('#{params[:fromUpdate]}', 'YYYYMMDD')")
     @characters = @characters.map do |character|
       {
         No: character.id,
