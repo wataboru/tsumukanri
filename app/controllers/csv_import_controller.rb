@@ -57,7 +57,7 @@ class CsvImportController < ApplicationController
       )
     end
     # 事前に全てTRUNCATE
-    ::Character.execute("TRUNCATE TABLE characters;")
+    ActiveRecord.execute("TRUNCATE TABLE characters;")
     # importメソッドでバルクインサート
     ::Character.import(characters)
     # 何レコード登録できたかを返す
