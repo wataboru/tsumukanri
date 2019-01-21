@@ -15,10 +15,12 @@ Rails.application.routes.draw do
     namespace :v1 do
       namespace :features do
         get "/get" , :action => "get"
+        get "/get/where/:id" , :action => "getWhereUpdate"
         get "/getMaxUpdate" , :action => "getMaxUpdate"
       end
       namespace :characters do
         get "/get" , :action => "get"
+        get "/get/where/:id" , :action => "getWhereUpdate"
         get "/getMaxUpdate" , :action => "getMaxUpdate"
       end
     end
