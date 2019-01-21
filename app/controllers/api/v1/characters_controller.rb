@@ -1,6 +1,10 @@
 class Api::V1::CharactersController < ApplicationController
   def get
-    @characters = Character.all
+    if defined? params[:fromUpdate] then
+      @characters = Character.where("to_date(up_date, 'YYYYMMDD') >= to_date(?, 'YYYYMMDD')", params[:fromUpdate])
+    else
+      @characters = Character.all
+    end
     @characters = @characters.map do |character|
       {
         No: character.id,
@@ -34,7 +38,7 @@ class Api::V1::CharactersController < ApplicationController
   end
 
   def getWhereUpdate
-    @characters = Character.where("to_date(up_date, 'YYYYMMDD') = to_date(?, 'YYYYMMDD')", params[:fromUpdate])
+    @characters = Character.where("to_date(up_date, 'YYYYMMDD') >= to_date(?, 'YYYYMMDD')", params[:fromUpdate])
     @characters = @characters.map do |character|
       {
         No: character.id,
