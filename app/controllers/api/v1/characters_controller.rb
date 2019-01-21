@@ -36,8 +36,7 @@ class Api::V1::CharactersController < ApplicationController
   end
 
   def getWhereUpdate
-    update = fromYYYYMMDDtoDate(params[:id])
-    @characters = Character.where("update_at <= '#{update}'")
+    @characters = ActiveRecord::Base.connection.execute("SELECT * FROM characters WHERE to_date(up_date, 'YYYYMMDD') >= to_date('#{param[:id]}', 'YYYYMMDD'))
     @characters = @characters.map do |character|
       {
         No: character.id,
@@ -74,13 +73,5 @@ class Api::V1::CharactersController < ApplicationController
     @maxUpdateOfCharacter = Character.maximum('up_date')
     render json: @maxUpdateOfCharacter
   end
-
-  private
-
-    # 日付変換(YYYYMMDD ⇒ Date)
-    def fromYYYYMMDDtoDate(yyyymmdd)
-      update = Time.parse("#{yyyymmdd}")
-    end
-
 
 end
