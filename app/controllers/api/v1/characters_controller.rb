@@ -33,8 +33,8 @@ class Api::V1::CharactersController < ApplicationController
     render json: @characters
   end
 
-  def getWhereUpdate(up_date)
-    @characters = Character.where("up_date = '#{up_date}'")
+  def getWhereUpdate
+    @characters = Character.where("up_date <= '#{params[:id]}'")
     @characters = @characters.map do |character|
       {
         No: character.id,
