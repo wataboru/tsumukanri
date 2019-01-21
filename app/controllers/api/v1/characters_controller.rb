@@ -1,6 +1,6 @@
 class Api::V1::CharactersController < ApplicationController
   def get
-    if defined? params[:fromUpdate] then
+    if params[:fromUpdate].blank? then
       @characters = Character.where("to_date(up_date, 'YYYYMMDD') >= to_date(?, 'YYYYMMDD')", params[:fromUpdate])
     else
       @characters = Character.all
