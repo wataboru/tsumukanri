@@ -1,3 +1,5 @@
+require 'time'
+
 class Api::V1::CharactersController < ApplicationController
   def get
     @characters = Character.all
@@ -34,7 +36,8 @@ class Api::V1::CharactersController < ApplicationController
   end
 
   def getWhereUpdate
-    @characters = Character.where("up_date <= '#{params[:id]}'")
+    update = fromYYYYMMDDtoDate(params[:id])
+    @characters = Character.where("update_at <= '#{update}'")
     @characters = @characters.map do |character|
       {
         No: character.id,
@@ -71,5 +74,13 @@ class Api::V1::CharactersController < ApplicationController
     @maxUpdateOfCharacter = Character.maximum('up_date')
     render json: @maxUpdateOfCharacter
   end
+
+  private
+
+    # 日付変換(YYYYMMDD ⇒ Date)
+    def fromYYYYMMDDtoDate(YYYYMMDD)
+      update = Time.parse("#{YYYYMMDD})
+    end
+
 
 end
