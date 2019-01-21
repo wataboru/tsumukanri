@@ -24,8 +24,8 @@ class CsvImportController < ApplicationController
     current_character_count = ::Character.count
     characters = []
     # windowsで作られたファイルに対応するので、encoding: "SJIS"を付けている
-    CSV.foreach(params[:characters_file].path, headers: true, encoding: "Shift_JIS:UTF-8") do |row|
-    #CSV.foreach(params[:characters_file].path, headers: true) do |row|
+#    CSV.foreach(params[:characters_file].path, headers: true, encoding: "Shift_JIS:UTF-8") do |row|
+    CSV.foreach(params[:characters_file].path, headers: true) do |row|
       characters << ::Character.new(
         {
           id: row["No"],
@@ -67,7 +67,7 @@ class CsvImportController < ApplicationController
     current_feature_count = ::Feature.count
     features = []
     # windowsで作られたファイルに対応するので、encoding: "SJIS"を付けている  
-    CSV.foreach(params[:features_file].path, headers: true, encoding: "Shift_JIS:UTF-8") do |row|
+    CSV.foreach(params[:features_file].path, headers: true) do |row|
       features << ::Feature.new(
         {
           id: row["row"],
