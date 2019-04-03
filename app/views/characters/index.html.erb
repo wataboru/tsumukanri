@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h5><a href="/features">to Fetures</a></h5>
-<h4><a href="/CSVImport">CSV Import</a></h5>
 
 <h1>Characters</h1>
 
@@ -11,8 +10,6 @@
     <%= link_to 'CSV Import', '/CSVImport', class: 'btn btn-success btn-md', style: 'color: white;' %>
   </div>
 </div>
-
-
 
 <table class='table'>
   <thead>
@@ -75,13 +72,13 @@
         <td><%= character.mustNum6 %></td>
         <td><%= character.up_date %></td>
         <td>
-            <div class="btn-toolbar">
-              <div class="btn-group">
-                <%= link_to 'Show', character, class: 'btn btn-default btn-sm' %>
-                <%= link_to 'Edit', edit_character_path(character), class: 'btn btn-default btn-sm' %>
-                <%= link_to 'Destroy', character, class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
-              </div>
+          <div class="btn-toolbar">
+            <div class="btn-group">
+              <%= link_to 'Show', character, class: 'btn btn-default btn-sm' %>
+              <%= link_to 'Edit', edit_character_path(character), class: 'btn btn-default btn-sm' %>
+              <%= link_to 'Destroy', character, class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
+          </div>
         <td>
       </tr>
     <% end %>
