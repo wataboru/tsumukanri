@@ -7,7 +7,7 @@
 
 <%= link_to 'New Feature', new_feature_path %>
 
-<table>
+<table class='table'>
   <thead>
     <tr>
       <th>row</th>
@@ -31,9 +31,15 @@
         <td><%= feature.contentSortNo %></td>
         <td><%= feature.up_date %></td>
         <td><%= feature.deleteFlg %></td>
-        <td><%= link_to 'Show', feature %></td>
-        <td><%= link_to 'Edit', edit_feature_path(feature) %></td>
-        <td><%= link_to 'Destroy', feature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+            <div class="btn-toolbar">
+              <div class="btn-group">
+        <%= link_to 'Show', feature %>
+        <%= link_to 'Edit', edit_feature_path(feature) %>
+        <%= link_to 'Destroy', feature, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            </div>
+        </td> 
       </tr>
     <% end %>
   </tbody>
