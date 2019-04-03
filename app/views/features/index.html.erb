@@ -5,7 +5,7 @@
 
 <h1>Features</h1>
 
-<%= link_to 'New Feature', new_feature_path %>
+<%= link_to 'New Feature', new_feature_path, class: 'btn btn-success' %>
 
 <table class='table'>
   <thead>
@@ -34,9 +34,9 @@
         <td>
             <div class="btn-toolbar">
               <div class="btn-group">
-        <%= link_to 'Show', feature %>
-        <%= link_to 'Edit', edit_feature_path(feature) %>
-        <%= link_to 'Destroy', feature, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to 'Show', feature, class: 'btn btn-default btn-sm' %>
+                <%= link_to 'Edit', edit_feature_path(feature), class: 'btn btn-default btn-sm' %>
+                <%= link_to 'Destroy', feature, class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
               </div>
             </div>
         </td> 
